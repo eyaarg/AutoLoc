@@ -16,5 +16,6 @@ public class Reservation {
     @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
     @OneToOne(fetch = FetchType.LAZY)
-    private Reservation reservation;
+    private Vehicule vehicule;
+    //REPOSITORIES POUR AUTOLOC
 }
