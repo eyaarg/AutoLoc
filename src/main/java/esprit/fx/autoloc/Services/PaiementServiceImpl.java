@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Paiement;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.PaiementRepository;
+import esprit.fx.autoloc.Repositories.IPaiementRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PaiementServiceImpl implements IPaiementService {
 
-    private final PaiementRepository paiementRepository;
+    private final IPaiementRepository paiementRepository;
 
     @Override
     public Paiement findById(Long id) {

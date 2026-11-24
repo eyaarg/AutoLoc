@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Employe;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.EmployeRepository;
+import esprit.fx.autoloc.Repositories.IEmployeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EmployeServiceImpl implements IEmployeService {
 
-    private final EmployeRepository employeRepository;
+    private final IEmployeRepository employeRepository;
 
     @Override
     public Employe create(Employe employe) {

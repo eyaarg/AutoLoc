@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Client;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.ClientRepository;
+import esprit.fx.autoloc.Repositories.IClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClientServiceImpl implements IClientService {
 
-    private final ClientRepository clientRepository;
+    private final IClientRepository clientRepository;
 
     @Override
     public Client create(Client client) {

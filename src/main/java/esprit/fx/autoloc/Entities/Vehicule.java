@@ -28,8 +28,6 @@ public class Vehicule {
             joinColumns = @JoinColumn(name = "id_vehicule"),
             inverseJoinColumns = @JoinColumn(name = "id_equipement"))
     private Set<Equipement> equipements = new HashSet<>();
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Vehicule vehicule;
     @OneToMany(mappedBy = "vehicule", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<Maintenance> maintenances = new ArrayList<>();
 }

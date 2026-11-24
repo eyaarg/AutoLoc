@@ -17,5 +17,4 @@ public class Reservation {
     private Client client;
     @OneToOne(fetch = FetchType.LAZY)
     private Vehicule vehicule;
-    //REPOSITORIES POUR AUTOLOC
 }

@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Maintenance;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.MaintenanceRepository;
+import esprit.fx.autoloc.Repositories.IMaintenanceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MaintenanceServiceImpl implements IMaintenanceService {
 
-    private final MaintenanceRepository maintenanceRepository;
+    private final IMaintenanceRepository maintenanceRepository;
 
     @Override
     public Maintenance create(Maintenance maintenance) {

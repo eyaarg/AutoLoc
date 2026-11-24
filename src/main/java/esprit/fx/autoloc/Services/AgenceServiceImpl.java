@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Agence;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.AgenceRepository;
+import esprit.fx.autoloc.Repositories.IAgenceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AgenceServiceImpl implements IAgenceService {
 
-    private final AgenceRepository agenceRepository;
+    private final IAgenceRepository agenceRepository;
 
     @Override
     public Agence create(Agence agence) {

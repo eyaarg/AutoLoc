@@ -1,9 +1,9 @@
 package esprit.fx.autoloc.Repositories;
 
-import esprit.fx.autoloc.Entities.Maintenance;
+import esprit.fx.autoloc.Entities.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface MaintenanceRepository extends JpaRepository<Maintenance,Long> {
+
+public interface IReservationRepository extends JpaRepository<Reservation,Long> {
 }

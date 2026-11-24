@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Contrat;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.ContratRepository;
+import esprit.fx.autoloc.Repositories.IContratRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ContratServiceImpl implements IContratService {
 
-    private final ContratRepository contratRepository;
+    private final IContratRepository contratRepository;
 
     @Override
     public Contrat create(Contrat contrat) {

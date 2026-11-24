@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Reservation;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.ReservationRepository;
+import esprit.fx.autoloc.Repositories.IReservationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReservationServiceImpl implements IReservationService {
 
-    private final ReservationRepository reservationRepository;
+    private final IReservationRepository reservationRepository;
 
     @Override
     public Reservation create(Reservation reservation) {

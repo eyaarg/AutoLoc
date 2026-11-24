@@ -47,7 +47,7 @@ Le bean manquant est `IContratService`, demandé par le paramètre 0 du construc
 ## E. Questions de compréhension
 
 **1. Où est le `new` de `ContratServiceImpl` et qui l'exécute ?**
-Il n'y en a aucun dans notre code. Le conteneur Spring (`ApplicationContext`, créé par `SpringApplication.run`) crée le bean au démarrage, après avoir détecté `@Service` pendant le scan du package racine. Il lui fournit le proxy de `ContratRepository` par son constructeur.
+Il n'y en a aucun dans notre code. Le conteneur Spring (`ApplicationContext`, créé par `SpringApplication.run`) crée le bean au démarrage, après avoir détecté `@Service` pendant le scan du package racine. Il lui fournit le proxy de `IContratRepository` par son constructeur.
 
 **2. Pourquoi un contrôleur dépendra-t-il de `IContratService` et non de `ContratServiceImpl` ?**
 Pour limiter le couplage. Le contrôleur ne connaît que le contrat de l'interface, donc on peut changer l'implémentation sans modifier le contrôleur, et on peut fournir une fausse implémentation pour les tests.

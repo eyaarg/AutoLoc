@@ -1,6 +1,8 @@
 package esprit.fx.autoloc.Entities;
+
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,18 +16,23 @@ public class Contrat {
     private LocalDate dateSignature;
     private BigDecimal montantTotal;
     private boolean valide;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    private Reservation reservation;
+
     @OneToMany(mappedBy = "contrat", cascade = CascadeType.ALL,
             orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Paiement> paiements = new ArrayList<>();
+
+    // Ajoute un paiement ET renseigne son contrat (les deux côtés de la relation)
     public void addPaiement(Paiement p) {
         paiements.add(p);
         p.setContrat(this);
     }
 
+    // Retire un paiement : avec orphanRemoval, Hibernate le supprime de la base
     public void removePaiement(Paiement p) {
         paiements.remove(p);
         p.setContrat(null);
     }
-    @OneToOne(fetch = FetchType.LAZY)
-    private Reservation reservation;
 }

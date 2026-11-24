@@ -2,7 +2,7 @@ package esprit.fx.autoloc.Services;
 
 import esprit.fx.autoloc.Entities.Equipement;
 import esprit.fx.autoloc.Exception.ResourceNotFoundException;
-import esprit.fx.autoloc.Repositories.EquipementRepository;
+import esprit.fx.autoloc.Repositories.IEquipementRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EquipementServiceImpl implements IEquipementService {
 
-    private final EquipementRepository equipementRepository;
+    private final IEquipementRepository equipementRepository;
 
     @Override
     public Equipement create(Equipement equipement) {
